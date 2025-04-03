@@ -21,7 +21,6 @@ def main():
               "AND NAME IT AS 'pdf_tts.pdf' IN ORDER TO BE READ PROPERLY."
               "OTHERWISE, CHANGE THE FILE PATH INSIDE THE CODE.")
 
-
     # Online TTS API conversion
     parameters = {
         "key": API_KEY,
@@ -35,7 +34,6 @@ def main():
         with open("tts_api_audio.mp3", 'wb') as audio_file:
             audio_file.write(api_response.content)
 
-
     # Offline TTS conversion
     except requests.exceptions.RequestException or ValueError as error:
         engine = pyttsx3.init()
@@ -43,7 +41,6 @@ def main():
         engine.save_to_file(output, "offline_tts_file.mp3")
         engine.runAndWait()
         print(f"API UNREACHABLE — ERROR:{error}\nAN OFFLINE VERSION OF THE TTS FILE WAS GENERATED")
-
 
     else:
         print("TTS GENERATED FROM API REQUEST")

@@ -1,0 +1,1 @@
+The PDF file you place inside the "PDFtoTTS" folder needs to be named "pdf_tts.pdf" in order to be read.
